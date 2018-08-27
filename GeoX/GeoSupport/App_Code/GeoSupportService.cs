@@ -24,7 +24,7 @@ public class GeoSupportService : System.Web.Services.WebService
     [WebMethod]
     public string HelloWorld()
     {
-        return "Hello World";
+        return "Hello World, Peng";
     }
 
 }

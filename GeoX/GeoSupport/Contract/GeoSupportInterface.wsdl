@@ -1,0 +1,185 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- edited with XMLSpy v2015 rel. 4 sp1 (x64) (http://www.altova.com) by Tamara Petrosian (DOE/DIIT) -->
+<!--  $Workfile: GeoSupportInterface.wsdl $ $Revision: 9 $ $Date: 12/03/12 4:20p $ -->
+<wsdl:definitions xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:tm="http://microsoft.com/wsdl/mime/textMatching/" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:mime="http://schemas.xmlsoap.org/wsdl/mime/" xmlns:tns="http://schools.nyc.gov/DOE.Services.Geography/GeoSupportService_v1_0" xmlns:s="http://www.w3.org/2001/XMLSchema" xmlns:http="http://schemas.xmlsoap.org/wsdl/http/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" targetNamespace="http://schools.nyc.gov/DOE.Services.Geography/GeoSupportService_v1_0">
+	<wsdl:types>
+		<s:schema targetNamespace="http://schools.nyc.gov/DOE.Services.Geography/GeoSupportService_v1_0">
+			<s:include schemaLocation="GeoSupportSchema.xsd"/>
+			<s:element name="PropertyLevelInformationbyAddress">
+				<s:complexType>
+					<s:sequence>
+						<s:element name="HouseNumber" type="s:string" minOccurs="0"/>
+						<s:element name="StreetName" type="s:string" minOccurs="0"/>
+						<s:element name="Borough" type="s:string" minOccurs="0"/>
+					</s:sequence>
+				</s:complexType>
+			</s:element>
+			<s:element name="PropertyLevelInformationbyAddressResponse">
+				<s:complexType>
+					<s:sequence>
+						<s:element name="PropertyLevelInformationbyAddressResult" type="tns:PropertyLevelInformationByAddressResults" minOccurs="0"/>
+					</s:sequence>
+				</s:complexType>
+			</s:element>
+			<s:element name="GeographicInformationbyIntersection">
+				<s:complexType>
+					<s:sequence>
+						<s:element name="StreetName1" type="s:string" minOccurs="0"/>
+						<s:element name="Borough1" type="s:string" minOccurs="0"/>
+						<s:element name="StreetName2" type="s:string" minOccurs="0"/>
+						<s:element name="Borough2" type="s:string" minOccurs="0"/>
+					</s:sequence>
+				</s:complexType>
+			</s:element>
+			<s:element name="GeographicInformationbyIntersectionResponse">
+				<s:complexType>
+					<s:sequence>
+						<s:element name="GeographicInformationbyIntersectionResult" type="tns:GeographicInformationByIntersectionResults" minOccurs="0"/>
+					</s:sequence>
+				</s:complexType>
+			</s:element>
+			<s:element name="ZoneInformationByAddress" type="tns:AddressInfo"/>
+			<s:element name="ZoneInformationByAddressResponse" type="tns:ZoneInfoByAddressResults"/>
+			<s:element name="GeographicInformationbyAddress">
+				<s:complexType>
+					<s:sequence>
+						<s:element name="HouseNumber" type="s:string" minOccurs="0"/>
+						<s:element name="StreetName" type="s:string" minOccurs="0"/>
+						<s:element name="BoroughOrZipCode" type="s:string" minOccurs="0"/>
+					</s:sequence>
+				</s:complexType>
+			</s:element>
+			<s:element name="GeographicInformationbyAddressResponse">
+				<s:complexType>
+					<s:sequence>
+						<s:element name="GeographicInformationbyAddressResult" type="tns:GeographicInformationByAddressResults" minOccurs="0" maxOccurs="unbounded"/>
+					</s:sequence>
+				</s:complexType>
+			</s:element>
+			<s:element name="EnrollmentInformationByAddress" type="tns:AddressInfo"/>
+			<s:element name="EnrollmentInformationByAddressResponse" type="tns:EnrollmentInformationByAddressResults"/>
+			<s:element name="NYCInformationByAddress" type="tns:AddressInfo"/>
+			<s:element name="NYCInformationByAddressResponse" type="tns:NYCInformationByAddressResults"/>
+		</s:schema>
+	</wsdl:types>
+	<wsdl:message name="GeographicInformationbyAddressSoapIn">
+		<wsdl:part name="parameters" element="tns:GeographicInformationbyAddress"/>
+	</wsdl:message>
+	<wsdl:message name="GeographicInformationbyAddressSoapOut">
+		<wsdl:part name="parameters" element="tns:GeographicInformationbyAddressResponse"/>
+	</wsdl:message>
+	<wsdl:message name="PropertyLevelInformationbyAddressSoapIn">
+		<wsdl:part name="parameters" element="tns:PropertyLevelInformationbyAddress"/>
+	</wsdl:message>
+	<wsdl:message name="PropertyLevelInformationbyAddressSoapOut">
+		<wsdl:part name="parameters" element="tns:PropertyLevelInformationbyAddressResponse"/>
+	</wsdl:message>
+	<wsdl:message name="GeographicInformationbyIntersectionSoapIn">
+		<wsdl:part name="parameters" element="tns:GeographicInformationbyIntersection"/>
+	</wsdl:message>
+	<wsdl:message name="GeographicInformationbyIntersectionSoapOut">
+		<wsdl:part name="parameters" element="tns:GeographicInformationbyIntersectionResponse"/>
+	</wsdl:message>
+	<wsdl:message name="ZoneInformationByAddressSoapIn">
+		<wsdl:part name="parameter" element="tns:ZoneInformationByAddress"/>
+	</wsdl:message>
+	<wsdl:message name="ZoneInformationByAddressSoapOut">
+		<wsdl:part name="parameter" element="tns:ZoneInformationByAddressResponse"/>
+	</wsdl:message>
+	<wsdl:message name="EnrollmentInformationByAddressSoapIn">
+		<wsdl:part name="parameter" element="tns:EnrollmentInformationByAddress"/>
+	</wsdl:message>
+	<wsdl:message name="EnrollmentInformationByAddressSoapOut">
+		<wsdl:part name="parameter" element="tns:EnrollmentInformationByAddressResponse"/>
+	</wsdl:message>
+	<wsdl:message name="NewMessage2"/>
+	<wsdl:message name="NYCInformationByAddressSoapIn">
+		<wsdl:part name="parameter" element="tns:NYCInformationByAddress"/>
+	</wsdl:message>
+	<wsdl:message name="NYCInformationByAddressSoapOut">
+		<wsdl:part name="parameter" element="tns:NYCInformationByAddressResponse"/>
+	</wsdl:message>
+	<wsdl:portType name="GeoSupportServiceSoap">
+		<wsdl:operation name="GeographicInformationbyAddress">
+			<wsdl:input message="tns:GeographicInformationbyAddressSoapIn"/>
+			<wsdl:output message="tns:GeographicInformationbyAddressSoapOut"/>
+		</wsdl:operation>
+		<wsdl:operation name="PropertyLevelInformationbyAddress">
+			<wsdl:input message="tns:PropertyLevelInformationbyAddressSoapIn"/>
+			<wsdl:output message="tns:PropertyLevelInformationbyAddressSoapOut"/>
+		</wsdl:operation>
+		<wsdl:operation name="GeographicInformationbyIntersection">
+			<wsdl:input message="tns:GeographicInformationbyIntersectionSoapIn"/>
+			<wsdl:output message="tns:GeographicInformationbyIntersectionSoapOut"/>
+		</wsdl:operation>
+		<wsdl:operation name="ZoneInformationByAddress">
+			<wsdl:input message="tns:ZoneInformationByAddressSoapIn"/>
+			<wsdl:output message="tns:ZoneInformationByAddressSoapOut"/>
+		</wsdl:operation>
+		<wsdl:operation name="EnrollmentInformationByAddress">
+			<wsdl:input message="tns:EnrollmentInformationByAddressSoapIn"/>
+			<wsdl:output message="tns:EnrollmentInformationByAddressSoapOut"/>
+		</wsdl:operation>
+		<wsdl:operation name="NYCInformationByAddress">
+			<wsdl:input message="tns:NYCInformationByAddressSoapIn"/>
+			<wsdl:output message="tns:NYCInformationByAddressSoapOut"/>
+		</wsdl:operation>
+	</wsdl:portType>
+	<wsdl:binding name="GeoSupportServiceSoap" type="tns:GeoSupportServiceSoap">
+		<soap:binding transport="http://schemas.xmlsoap.org/soap/http"/>
+		<wsdl:operation name="GeographicInformationbyAddress">
+			<soap:operation soapAction="GeographicInformationbyAddress" style="document"/>
+			<wsdl:input>
+				<soap:body use="literal"/>  
+			</wsdl:input>
+			<wsdl:output>
+				<soap:body use="literal"/>
+			</wsdl:output>
+		</wsdl:operation>
+		<wsdl:operation name="PropertyLevelInformationbyAddress">
+			<soap:operation soapAction="PropertyLevelInformationbyAddress" style="document"/>
+			<wsdl:input>
+				<soap:body use="literal"/>
+			</wsdl:input>
+			<wsdl:output>
+				<soap:body use="literal"/>
+			</wsdl:output>
+		</wsdl:operation>
+		<wsdl:operation name="GeographicInformationbyIntersection">
+			<soap:operation soapAction="GeographicInformationbyIntersection" style="document"/>
+			<wsdl:input>
+				<soap:body use="literal"/>
+			</wsdl:input>
+			<wsdl:output>
+				<soap:body use="literal"/>
+			</wsdl:output>
+		</wsdl:operation>
+		<wsdl:operation name="ZoneInformationByAddress">
+			<soap:operation soapAction="urn:ZoneInformationByAddress"/>
+			<wsdl:input>
+				<soap:body use="literal"/>
+			</wsdl:input>
+			<wsdl:output>
+				<soap:body use="literal"/>
+			</wsdl:output>
+		</wsdl:operation>
+		<wsdl:operation name="EnrollmentInformationByAddress">
+			<soap:operation soapAction="urn:EnrollmentInformationByAddress"/>
+			<wsdl:input>
+				<soap:body use="literal"/>
+			</wsdl:input>
+			<wsdl:output>
+				<soap:body use="literal"/>
+			</wsdl:output>
+		</wsdl:operation>
+		<wsdl:operation name="NYCInformationByAddress">
+			<soap:operation soapAction="urn:NYCInformationByAddress"/>
+			<wsdl:input>
+				<soap:body use="literal"/>
+			</wsdl:input>
+			<wsdl:output>
+				<soap:body use="literal"/>
+			</wsdl:output>
+		</wsdl:operation>
+	</wsdl:binding>
+</wsdl:definitions>

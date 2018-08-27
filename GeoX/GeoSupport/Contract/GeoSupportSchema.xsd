@@ -1,0 +1,239 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- $Workfile: GeoSupportSchema.xsd $ $Revision: 10 $ $Date: 1/07/13 12:58p $ -->
+<s:schema xmlns:http="http://schemas.xmlsoap.org/wsdl/http/" xmlns:mime="http://schemas.xmlsoap.org/wsdl/mime/" xmlns:s="http://www.w3.org/2001/XMLSchema" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:tm="http://microsoft.com/wsdl/mime/textMatching/" xmlns:tns="http://schools.nyc.gov/DOE.Services.Geography/GeoSupportService_v1_0" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" targetNamespace="http://schools.nyc.gov/DOE.Services.Geography/GeoSupportService_v1_0" elementFormDefault="qualified" attributeFormDefault="unqualified">
+	<s:complexType name="GeographicInformationByAddressResults">
+		<s:sequence>
+			<s:element name="GeoSupportFunctionName" type="s:string" minOccurs="0" />
+			<s:element name="HighHouseNumber" type="s:string" minOccurs="0" />
+			<s:element name="LowHouseNumber" type="s:string" minOccurs="0" />
+			<s:element name="DCPLocallyValidStreetNames" type="s:string" minOccurs="0" />
+			<s:element name="LowCrossStreetCount" type="s:string" minOccurs="0" />
+			<s:element name="LowCrossStreets" type="tns:ArrayOfBorough5DigitStreetCode" minOccurs="0" />
+			<s:element name="HighCrossStreetCount" type="s:string" minOccurs="0" />
+			<s:element name="HighCrossStreets" type="tns:ArrayOfBorough5DigitStreetCode" minOccurs="0" />
+			<s:element name="LionKey" type="tns:LionKey" minOccurs="0" />
+			<s:element name="SpecialCaseAddressIdentifier" type="s:string" minOccurs="0" />
+			<s:element name="SideOfStreetIndicator" type="s:string" minOccurs="0" />
+			<s:element name="X" type="s:string" minOccurs="0" />
+			<s:element name="Y" type="s:string" minOccurs="0" />
+			<s:element name="ReservedFORGeoSupportUSE" type="s:string" minOccurs="0" />
+			<s:element name="MarbleHillRikersIslandFlag" type="s:string" minOccurs="0" />
+			<s:element name="DOTStreetLightContractorArea" type="s:string" minOccurs="0" />
+			<s:element name="CommunityDistrict" type="tns:CommunityDistrict" minOccurs="0" />
+			<s:element name="ZipCode" type="s:string" minOccurs="0" />
+			<s:element name="ElectionDistrict" type="s:string" minOccurs="0" />
+			<s:element name="AssemblyDistrict" type="s:string" minOccurs="0" />
+			<s:element name="SplitElectionDistrictFlag" type="s:string" minOccurs="0" />
+			<s:element name="CongressionalDistrict" type="s:string" minOccurs="0" />
+			<s:element name="SenateDistrict" type="s:string" minOccurs="0" />
+			<s:element name="SchoolDistrict" type="s:string" minOccurs="0" />
+			<s:element name="SplitSchoolDistrictFlag" type="s:string" minOccurs="0" />
+			<s:element name="CensusTract2000" type="s:string" minOccurs="0" />
+			<s:element name="CensusBlock2000" type="s:string" minOccurs="0" />
+			<s:element name="TrueHouseNumber" type="s:string" minOccurs="0" />
+			<s:element name="Borough7DigitStreetCode" type="tns:Borough7DigitStreetCode" minOccurs="0" />
+			<s:element name="ErrorMessage" type="tns:ErrorMessage" minOccurs="0" />
+		</s:sequence>
+	</s:complexType>
+	<s:complexType name="ArrayOfBorough5DigitStreetCode">
+		<s:sequence>
+			<s:element name="Borough5DigitStreetCode" type="tns:Borough5DigitStreetCode" nillable="true" minOccurs="0" maxOccurs="unbounded" />
+		</s:sequence>
+	</s:complexType>
+	<s:complexType name="Borough5DigitStreetCode">
+		<s:sequence>
+			<s:element name="BoroughCode" type="s:string" minOccurs="0" />
+			<s:element name="FiveDigitStreetCode" type="s:string" minOccurs="0" />
+		</s:sequence>
+	</s:complexType>
+	<s:complexType name="LionKey">
+		<s:sequence>
+			<s:element name="BoroughCode" type="s:string" minOccurs="0" />
+			<s:element name="BlockFaceCode" type="s:string" minOccurs="0" />
+			<s:element name="SequenceNumber" type="s:string" minOccurs="0" />
+		</s:sequence>
+	</s:complexType>
+	<s:complexType name="CommunityDistrict">
+		<s:sequence>
+			<s:element name="BoroughCode" type="s:string" minOccurs="0" />
+			<s:element name="DistrictNumber" type="s:string" minOccurs="0" />
+		</s:sequence>
+	</s:complexType>
+	<s:complexType name="Borough7DigitStreetCode">
+		<s:sequence>
+			<s:element name="BoroughCode" type="s:string" minOccurs="0" />
+			<s:element name="StreetCode" type="s:string" minOccurs="0" />
+			<s:element name="LocalGroupCode" type="s:string" minOccurs="0" />
+		</s:sequence>
+	</s:complexType>
+	<s:complexType name="PropertyLevelInformationByAddressResults">
+		<s:sequence>
+			<s:element name="GeoSupportFunctionName" type="s:string" minOccurs="0" />
+			<s:element name="LowHouseNumberSorted" type="s:string" minOccurs="0" />
+			<s:element name="BoroughBlockLot" type="tns:BoroughBlockLot" minOccurs="0" />
+			<s:element name="RPADSelfCheckCode" type="s:string" minOccurs="0" />
+			<s:element name="CornerCode" type="s:string" minOccurs="0" />
+			<s:element name="NumberOfBuildings" type="s:string" minOccurs="0" />
+			<s:element name="NumberOfBlockFaces" type="s:string" minOccurs="0" />
+			<s:element name="InteriorFlag" type="s:string" minOccurs="0" />
+			<s:element name="VacantFlag" type="s:string" minOccurs="0" />
+			<s:element name="MarbleHillRikersIslandFlag" type="s:string" minOccurs="0" />
+			<s:element name="AddressOverflowFlag" type="s:string" minOccurs="0" />
+			<s:element name="StrollKey" type="s:string" minOccurs="0" />
+			<s:element name="BuildingIdentificationNumber" type="tns:BuildingIdentificationNumber" minOccurs="0" />
+			<s:element name="CondoFlag" type="s:string" minOccurs="0" />
+			<s:element name="CondoNumber" type="s:string" minOccurs="0" />
+			<s:element name="COOPNumber" type="s:string" minOccurs="0" />
+			<s:element name="X" type="s:string" minOccurs="0" />
+			<s:element name="Y" type="s:string" minOccurs="0" />
+			<s:element name="NumberOfAddresses" type="s:string" minOccurs="0" />
+			<s:element name="AlternateStreets" type="tns:ArrayOfAddressRange" minOccurs="0" />
+		</s:sequence>
+	</s:complexType>
+	<s:complexType name="BoroughBlockLot">
+		<s:sequence>
+			<s:element name="Borough" type="s:string" minOccurs="0" />
+			<s:element name="Block" type="s:string" minOccurs="0" />
+			<s:element name="Lot" type="s:string" minOccurs="0" />
+		</s:sequence>
+	</s:complexType>
+	<s:complexType name="BuildingIdentificationNumber">
+		<s:sequence>
+			<s:element name="Borough" type="s:string" minOccurs="0" />
+			<s:element name="BinNumber" type="s:string" minOccurs="0" />
+		</s:sequence>
+	</s:complexType>
+	<s:complexType name="ArrayOfAddressRange">
+		<s:sequence>
+			<s:element name="AddressRange" type="tns:AddressRange" nillable="true" minOccurs="0" maxOccurs="unbounded" />
+		</s:sequence>
+	</s:complexType>
+	<s:complexType name="AddressRange">
+		<s:sequence>
+			<s:element name="LowHouseNumberDisplay" type="s:string" minOccurs="0" />
+			<s:element name="HighHouseNumberDisplay" type="s:string" minOccurs="0" />
+			<s:element name="Borough7DigitStreetCode" type="tns:Borough7DigitStreetCode" minOccurs="0" />
+			<s:element name="BuildingIdentificationNumber" type="tns:BuildingIdentificationNumber" minOccurs="0" />
+			<s:element name="SideOFStreetIndicator" type="s:string" minOccurs="0" />
+			<s:element name="AddressType" type="s:string" minOccurs="0" />
+		</s:sequence>
+	</s:complexType>
+	<s:complexType name="GeographicInformationByIntersectionResults">
+		<s:sequence>
+			<s:element name="GeoSupportFunctionName" type="s:string" minOccurs="0" />
+			<s:element name="DuplicateIntersectionCount" type="s:string" minOccurs="0" />
+			<s:element name="CrossStreetCount" type="s:string" minOccurs="0" />
+			<s:element name="CrossStreets" type="tns:ArrayOfBorough5DigitStreetCode" minOccurs="0" />
+			<s:element name="LionNodeNumber" type="s:string" minOccurs="0" />
+			<s:element name="X" type="s:string" minOccurs="0" />
+			<s:element name="Y" type="s:string" minOccurs="0" />
+			<s:element name="MarbleHillRikersIslandFlag" type="s:string" minOccurs="0" />
+			<s:element name="CommunityDistrict" type="tns:CommunityDistrict" minOccurs="0" />
+			<s:element name="ZipCode" type="s:string" minOccurs="0" />
+			<s:element name="SchoolDistrict" type="s:string" minOccurs="0" />
+			<s:element name="CensusTract2000" type="s:string" minOccurs="0" />
+			<s:element name="AssemblyDistrict" type="s:string" minOccurs="0" />
+			<s:element name="CongressionalDistrict" type="s:string" minOccurs="0" />
+			<s:element name="SenateDistrict" type="s:string" minOccurs="0" />
+			<s:element name="ErrorMessage" type="tns:ErrorMessage" minOccurs="0" />
+		</s:sequence>
+	</s:complexType>
+	<s:complexType name="AddressInfo">
+		<s:sequence>
+			<s:element name="HouseNumber" type="s:string" minOccurs="0" />
+			<s:element name="StreetName" type="s:string" minOccurs="0" />
+			<s:element name="BoroughOrZipCode" type="s:string" minOccurs="0" />
+		</s:sequence>
+	</s:complexType>
+	<s:complexType name="ZoneInfoByAddressResults">
+		<s:sequence>
+			<s:element name="ZoneInfoByAddress" minOccurs="0" maxOccurs="unbounded">
+				<s:complexType>
+					<s:sequence>
+						<s:element name="GeographicInfo" type="tns:GeographicInformationByAddressResults" minOccurs="0" />
+						<s:element name="SchoolInfo" minOccurs="0">
+							<s:complexType>
+								<s:sequence>
+									<s:element name="ElementarySchools" type="tns:ArrayOfSchoolInfo" minOccurs="0" />
+									<s:element name="MiddleSchools" type="tns:ArrayOfSchoolInfo" minOccurs="0" />
+								</s:sequence>
+							</s:complexType>
+						</s:element>
+					</s:sequence>
+				</s:complexType>
+			</s:element>
+		</s:sequence>
+	</s:complexType>
+	<s:complexType name="ErrorMessage">
+		<s:sequence>
+			<s:element name="errorCode" type="s:token" minOccurs="0" />
+			<s:element name="errorDescription" type="s:string" minOccurs="0" />
+		</s:sequence>
+	</s:complexType>
+	<s:complexType name="SchoolInfo">
+		<s:sequence>
+			<s:element name="LocationCode" type="s:token" />
+			<s:element name="Remarks" type="s:normalizedString" />
+		</s:sequence>
+	</s:complexType>
+	<s:complexType name="ArrayOfSchoolInfo">
+		<s:sequence>
+			<s:element name="SchoolInfo" type="tns:SchoolInfo" minOccurs="0" maxOccurs="unbounded" />
+		</s:sequence>
+	</s:complexType>
+	<s:complexType name="EnrollmentInformationByAddressResults">
+		<s:sequence>
+			<s:element name="EnrollmentInfoByAddress" minOccurs="0" maxOccurs="unbounded">
+				<s:complexType>
+					<s:sequence>
+						<s:element name="GeographicInfo" type="tns:GeographicInformationByAddressResults" minOccurs="0" />
+						<s:element name="PoliticalInfo" type="tns:PoliticalInfo" minOccurs="0" />
+						<s:element name="SchoolInfo" minOccurs="0">
+							<s:complexType>
+								<s:sequence>
+									<s:element name="CurrentYear" type="tns:ZonedSchools" />
+									<s:element name="NextYear" type="tns:ZonedSchools" minOccurs="0" />
+								</s:sequence>
+							</s:complexType>
+						</s:element>
+					</s:sequence>
+				</s:complexType>
+			</s:element>
+		</s:sequence>
+	</s:complexType>
+	<s:complexType name="PoliticalInfo">
+		<s:sequence>
+			<s:element name="HouseCode" type="s:token" minOccurs="0" />
+			<s:element name="SegmentID" type="s:token" minOccurs="0" />
+			<s:element name="StandardizedStreetName" type="s:normalizedString" minOccurs="0" />
+			<s:element name="StreetCodeB10SC" type="s:token" minOccurs="0" />
+			<s:element name="ZipCode" type="s:token" minOccurs="0" />
+			<s:element name="CensusTract2010" type="s:token" minOccurs="0" />
+			<s:element name="CensusBlock2010" type="s:token" minOccurs="0" />
+			<s:element name="MunicipalCourtDistrict" type="s:token" minOccurs="0" />
+			<s:element name="CityCouncilDistrict" type="s:token" minOccurs="0" />
+		</s:sequence>
+	</s:complexType>
+	<s:complexType name="ZonedSchoolInfo">
+		<s:sequence>
+			<s:element name="PolygonId" type="s:token" minOccurs="0" />
+			<s:element name="SchoolInfo" minOccurs="0" maxOccurs="unbounded">
+				<s:complexType>
+					<s:sequence>
+						<s:element name="LocationCode" type="s:token" minOccurs="0" />
+					</s:sequence>
+				</s:complexType>
+			</s:element>
+			<s:element name="Remarks" type="s:normalizedString" minOccurs="0" />
+			<s:element name="ZonedDistrict" type="s:token" minOccurs="0" />
+		</s:sequence>
+	</s:complexType>
+	<s:complexType name="ZonedSchools">
+		<s:sequence>
+			<s:element name="SchoolYear" type="s:token" minOccurs="0" />
+			<s:element name="ElementarySchools" type="tns:ZonedSchoolInfo" minOccurs="0" />
+			<s:element name="MiddleSchools" type="tns:ZonedSchoolInfo" minOccurs="0" />
+			<s:element name="HighSchools" type="tns:ZonedSchoolInfo" minOccurs="0" />
+		</s:sequence>
+	</s:complexType>
+</s:schema>
